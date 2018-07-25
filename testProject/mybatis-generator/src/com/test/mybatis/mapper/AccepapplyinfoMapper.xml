@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.mybatis.mapper.AccepapplyinfoMapper" >
+  <resultMap id="BaseResultMap" type="com.test.mybatis.po.Accepapplyinfo" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="APPTYPE" property="apptype" jdbcType="CHAR" />
+    <result column="COMBORRFLAG" property="comborrflag" jdbcType="CHAR" />
+    <result column="SOURCESCHAN" property="sourceschan" jdbcType="CHAR" />
+    <result column="SOURCESCHANREMARK" property="sourceschanremark" jdbcType="VARCHAR" />
+    <result column="SALPERID" property="salperid" jdbcType="VARCHAR" />
+    <result column="SALPERCODE" property="salpercode" jdbcType="VARCHAR" />
+    <result column="SALPERTEL" property="salpertel" jdbcType="VARCHAR" />
+    <result column="SALPERORGID" property="salperorgid" jdbcType="VARCHAR" />
+    <result column="PROID" property="proid" jdbcType="VARCHAR" />
+    <result column="PROCODE" property="procode" jdbcType="VARCHAR" />
+    <result column="APPORGID" property="apporgid" jdbcType="VARCHAR" />
+    <result column="APPORGCODE" property="apporgcode" jdbcType="VARCHAR" />
+    <result column="APPSERPERID" property="appserperid" jdbcType="VARCHAR" />
+    <result column="APPSERPERCODE" property="appserpercode" jdbcType="VARCHAR" />
+    <result column="APPDATE" property="appdate" jdbcType="TIMESTAMP" />
+    <result column="FAMKNOWFLAG" property="famknowflag" jdbcType="CHAR" />
+    <result column="KNOWERNAME" property="knowername" jdbcType="VARCHAR" />
+    <result column="KNOWERRELATION" property="knowerrelation" jdbcType="CHAR" />
+    <result column="BORRTYPE" property="borrtype" jdbcType="VARCHAR" />
+    <result column="EMERTYPE" property="emertype" jdbcType="CHAR" />
+    <result column="EMERAMT" property="emeramt" jdbcType="DECIMAL" />
+    <result column="APPLYMAINNO" property="applymainno" jdbcType="VARCHAR" />
+    <result column="APPLYSUBNO" property="applysubno" jdbcType="VARCHAR" />
+    <result column="PROCESSINSTANCEID" property="processinstanceid" jdbcType="BIGINT" />
+    <result column="BUSISTATE" property="busistate" jdbcType="CHAR" />
+    <result column="RECONSIDERNUM" property="reconsidernum" jdbcType="TINYINT" />
+    <result column="TEAMLEADERID" property="teamleaderid" jdbcType="VARCHAR" />
+    <result column="TEAMLEADERCODE" property="teamleadercode" jdbcType="VARCHAR" />
+    <result column="TEAMLEADERSUBORGID" property="teamleadersuborgid" jdbcType="VARCHAR" />
+    <result column="TEAMLEADERORGID" property="teamleaderorgid" jdbcType="VARCHAR" />
+    <result column="CREATETIME" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="DATASOURCE" property="datasource" jdbcType="CHAR" />
+    <result column="BULLTYPE" property="bulltype" jdbcType="CHAR" />
+    <result column="APPLYPARENTSUBNO" property="applyparentsubno" jdbcType="VARCHAR" />
+    <result column="CHANNELBACKFLAG" property="channelbackflag" jdbcType="CHAR" />
+    <result column="SIGNORGCODE" property="signorgcode" jdbcType="VARCHAR" />
+    <result column="SIGNORGNAME" property="signorgname" jdbcType="VARCHAR" />
+    <result column="SYNSTATUS" property="synstatus" jdbcType="CHAR" />
+    <result column="INTRMOB" property="intrmob" jdbcType="VARCHAR" />
+    <result column="INTRNAME" property="intrname" jdbcType="VARCHAR" />
+    <result column="PRODUCTOPTIONAL" property="productoptional" jdbcType="CHAR" />
+    <result column="INSURANCEPLAN" property="insuranceplan" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, APPTYPE, COMBORRFLAG, SOURCESCHAN, SOURCESCHANREMARK, SALPERID, SALPERCODE, SALPERTEL, 
+    SALPERORGID, PROID, PROCODE, APPORGID, APPORGCODE, APPSERPERID, APPSERPERCODE, APPDATE, 
+    FAMKNOWFLAG, KNOWERNAME, KNOWERRELATION, BORRTYPE, EMERTYPE, EMERAMT, APPLYMAINNO, 
+    APPLYSUBNO, PROCESSINSTANCEID, BUSISTATE, RECONSIDERNUM, TEAMLEADERID, TEAMLEADERCODE, 
+    TEAMLEADERSUBORGID, TEAMLEADERORGID, CREATETIME, DATASOURCE, BULLTYPE, APPLYPARENTSUBNO, 
+    CHANNELBACKFLAG, SIGNORGCODE, SIGNORGNAME, SYNSTATUS, INTRMOB, INTRNAME, PRODUCTOPTIONAL, 
+    INSURANCEPLAN
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from ACCEPAPPLYINFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from ACCEPAPPLYINFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.test.mybatis.po.Accepapplyinfo" >
+    insert into ACCEPAPPLYINFO (ID, APPTYPE, COMBORRFLAG, 
+      SOURCESCHAN, SOURCESCHANREMARK, SALPERID, 
+      SALPERCODE, SALPERTEL, SALPERORGID, 
+      PROID, PROCODE, APPORGID, 
+      APPORGCODE, APPSERPERID, APPSERPERCODE, 
+      APPDATE, FAMKNOWFLAG, KNOWERNAME, 
+      KNOWERRELATION, BORRTYPE, EMERTYPE, 
+      EMERAMT, APPLYMAINNO, APPLYSUBNO, 
+      PROCESSINSTANCEID, BUSISTATE, RECONSIDERNUM, 
+      TEAMLEADERID, TEAMLEADERCODE, TEAMLEADERSUBORGID, 
+      TEAMLEADERORGID, CREATETIME, DATASOURCE, 
+      BULLTYPE, APPLYPARENTSUBNO, CHANNELBACKFLAG, 
+      SIGNORGCODE, SIGNORGNAME, SYNSTATUS, 
+      INTRMOB, INTRNAME, PRODUCTOPTIONAL, 
+      INSURANCEPLAN)
+    values (#{id,jdbcType=VARCHAR}, #{apptype,jdbcType=CHAR}, #{comborrflag,jdbcType=CHAR}, 
+      #{sourceschan,jdbcType=CHAR}, #{sourceschanremark,jdbcType=VARCHAR}, #{salperid,jdbcType=VARCHAR}, 
+      #{salpercode,jdbcType=VARCHAR}, #{salpertel,jdbcType=VARCHAR}, #{salperorgid,jdbcType=VARCHAR}, 
+      #{proid,jdbcType=VARCHAR}, #{procode,jdbcType=VARCHAR}, #{apporgid,jdbcType=VARCHAR}, 
+      #{apporgcode,jdbcType=VARCHAR}, #{appserperid,jdbcType=VARCHAR}, #{appserpercode,jdbcType=VARCHAR}, 
+      #{appdate,jdbcType=TIMESTAMP}, #{famknowflag,jdbcType=CHAR}, #{knowername,jdbcType=VARCHAR}, 
+      #{knowerrelation,jdbcType=CHAR}, #{borrtype,jdbcType=VARCHAR}, #{emertype,jdbcType=CHAR}, 
+      #{emeramt,jdbcType=DECIMAL}, #{applymainno,jdbcType=VARCHAR}, #{applysubno,jdbcType=VARCHAR}, 
+      #{processinstanceid,jdbcType=BIGINT}, #{busistate,jdbcType=CHAR}, #{reconsidernum,jdbcType=TINYINT}, 
+      #{teamleaderid,jdbcType=VARCHAR}, #{teamleadercode,jdbcType=VARCHAR}, #{teamleadersuborgid,jdbcType=VARCHAR}, 
+      #{teamleaderorgid,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{datasource,jdbcType=CHAR}, 
+      #{bulltype,jdbcType=CHAR}, #{applyparentsubno,jdbcType=VARCHAR}, #{channelbackflag,jdbcType=CHAR}, 
+      #{signorgcode,jdbcType=VARCHAR}, #{signorgname,jdbcType=VARCHAR}, #{synstatus,jdbcType=CHAR}, 
+      #{intrmob,jdbcType=VARCHAR}, #{intrname,jdbcType=VARCHAR}, #{productoptional,jdbcType=CHAR}, 
+      #{insuranceplan,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.test.mybatis.po.Accepapplyinfo" >
+    insert into ACCEPAPPLYINFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="apptype != null" >
+        APPTYPE,
+      </if>
+      <if test="comborrflag != null" >
+        COMBORRFLAG,
+      </if>
+      <if test="sourceschan != null" >
+        SOURCESCHAN,
+      </if>
+      <if test="sourceschanremark != null" >
+        SOURCESCHANREMARK,
+      </if>
+      <if test="salperid != null" >
+        SALPERID,
+      </if>
+      <if test="salpercode != null" >
+        SALPERCODE,
+      </if>
+      <if test="salpertel != null" >
+        SALPERTEL,
+      </if>
+      <if test="salperorgid != null" >
+        SALPERORGID,
+      </if>
+      <if test="proid != null" >
+        PROID,
+      </if>
+      <if test="procode != null" >
+        PROCODE,
+      </if>
+      <if test="apporgid != null" >
+        APPORGID,
+      </if>
+      <if test="apporgcode != null" >
+        APPORGCODE,
+      </if>
+      <if test="appserperid != null" >
+        APPSERPERID,
+      </if>
+      <if test="appserpercode != null" >
+        APPSERPERCODE,
+      </if>
+      <if test="appdate != null" >
+        APPDATE,
+      </if>
+      <if test="famknowflag != null" >
+        FAMKNOWFLAG,
+      </if>
+      <if test="knowername != null" >
+        KNOWERNAME,
+      </if>
+      <if test="knowerrelation != null" >
+        KNOWERRELATION,
+      </if>
+      <if test="borrtype != null" >
+        BORRTYPE,
+      </if>
+      <if test="emertype != null" >
+        EMERTYPE,
+      </if>
+      <if test="emeramt != null" >
+        EMERAMT,
+      </if>
+      <if test="applymainno != null" >
+        APPLYMAINNO,
+      </if>
+      <if test="applysubno != null" >
+        APPLYSUBNO,
+      </if>
+      <if test="processinstanceid != null" >
+        PROCESSINSTANCEID,
+      </if>
+      <if test="busistate != null" >
+        BUSISTATE,
+      </if>
+      <if test="reconsidernum != null" >
+        RECONSIDERNUM,
+      </if>
+      <if test="teamleaderid != null" >
+        TEAMLEADERID,
+      </if>
+      <if test="teamleadercode != null" >
+        TEAMLEADERCODE,
+      </if>
+      <if test="teamleadersuborgid != null" >
+        TEAMLEADERSUBORGID,
+      </if>
+      <if test="teamleaderorgid != null" >
+        TEAMLEADERORGID,
+      </if>
+      <if test="createtime != null" >
+        CREATETIME,
+      </if>
+      <if test="datasource != null" >
+        DATASOURCE,
+      </if>
+      <if test="bulltype != null" >
+        BULLTYPE,
+      </if>
+      <if test="applyparentsubno != null" >
+        APPLYPARENTSUBNO,
+      </if>
+      <if test="channelbackflag != null" >
+        CHANNELBACKFLAG,
+      </if>
+      <if test="signorgcode != null" >
+        SIGNORGCODE,
+      </if>
+      <if test="signorgname != null" >
+        SIGNORGNAME,
+      </if>
+      <if test="synstatus != null" >
+        SYNSTATUS,
+      </if>
+      <if test="intrmob != null" >
+        INTRMOB,
+      </if>
+      <if test="intrname != null" >
+        INTRNAME,
+      </if>
+      <if test="productoptional != null" >
+        PRODUCTOPTIONAL,
+      </if>
+      <if test="insuranceplan != null" >
+        INSURANCEPLAN,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="apptype != null" >
+        #{apptype,jdbcType=CHAR},
+      </if>
+      <if test="comborrflag != null" >
+        #{comborrflag,jdbcType=CHAR},
+      </if>
+      <if test="sourceschan != null" >
+        #{sourceschan,jdbcType=CHAR},
+      </if>
+      <if test="sourceschanremark != null" >
+        #{sourceschanremark,jdbcType=VARCHAR},
+      </if>
+      <if test="salperid != null" >
+        #{salperid,jdbcType=VARCHAR},
+      </if>
+      <if test="salpercode != null" >
+        #{salpercode,jdbcType=VARCHAR},
+      </if>
+      <if test="salpertel != null" >
+        #{salpertel,jdbcType=VARCHAR},
+      </if>
+      <if test="salperorgid != null" >
+        #{salperorgid,jdbcType=VARCHAR},
+      </if>
+      <if test="proid != null" >
+        #{proid,jdbcType=VARCHAR},
+      </if>
+      <if test="procode != null" >
+        #{procode,jdbcType=VARCHAR},
+      </if>
+      <if test="apporgid != null" >
+        #{apporgid,jdbcType=VARCHAR},
+      </if>
+      <if test="apporgcode != null" >
+        #{apporgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="appserperid != null" >
+        #{appserperid,jdbcType=VARCHAR},
+      </if>
+      <if test="appserpercode != null" >
+        #{appserpercode,jdbcType=VARCHAR},
+      </if>
+      <if test="appdate != null" >
+        #{appdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="famknowflag != null" >
+        #{famknowflag,jdbcType=CHAR},
+      </if>
+      <if test="knowername != null" >
+        #{knowername,jdbcType=VARCHAR},
+      </if>
+      <if test="knowerrelation != null" >
+        #{knowerrelation,jdbcType=CHAR},
+      </if>
+      <if test="borrtype != null" >
+        #{borrtype,jdbcType=VARCHAR},
+      </if>
+      <if test="emertype != null" >
+        #{emertype,jdbcType=CHAR},
+      </if>
+      <if test="emeramt != null" >
+        #{emeramt,jdbcType=DECIMAL},
+      </if>
+      <if test="applymainno != null" >
+        #{applymainno,jdbcType=VARCHAR},
+      </if>
+      <if test="applysubno != null" >
+        #{applysubno,jdbcType=VARCHAR},
+      </if>
+      <if test="processinstanceid != null" >
+        #{processinstanceid,jdbcType=BIGINT},
+      </if>
+      <if test="busistate != null" >
+        #{busistate,jdbcType=CHAR},
+      </if>
+      <if test="reconsidernum != null" >
+        #{reconsidernum,jdbcType=TINYINT},
+      </if>
+      <if test="teamleaderid != null" >
+        #{teamleaderid,jdbcType=VARCHAR},
+      </if>
+      <if test="teamleadercode != null" >
+        #{teamleadercode,jdbcType=VARCHAR},
+      </if>
+      <if test="teamleadersuborgid != null" >
+        #{teamleadersuborgid,jdbcType=VARCHAR},
+      </if>
+      <if test="teamleaderorgid != null" >
+        #{teamleaderorgid,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="datasource != null" >
+        #{datasource,jdbcType=CHAR},
+      </if>
+      <if test="bulltype != null" >
+        #{bulltype,jdbcType=CHAR},
+      </if>
+      <if test="applyparentsubno != null" >
+        #{applyparentsubno,jdbcType=VARCHAR},
+      </if>
+      <if test="channelbackflag != null" >
+        #{channelbackflag,jdbcType=CHAR},
+      </if>
+      <if test="signorgcode != null" >
+        #{signorgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="signorgname != null" >
+        #{signorgname,jdbcType=VARCHAR},
+      </if>
+      <if test="synstatus != null" >
+        #{synstatus,jdbcType=CHAR},
+      </if>
+      <if test="intrmob != null" >
+        #{intrmob,jdbcType=VARCHAR},
+      </if>
+      <if test="intrname != null" >
+        #{intrname,jdbcType=VARCHAR},
+      </if>
+      <if test="productoptional != null" >
+        #{productoptional,jdbcType=CHAR},
+      </if>
+      <if test="insuranceplan != null" >
+        #{insuranceplan,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.test.mybatis.po.Accepapplyinfo" >
+    update ACCEPAPPLYINFO
+    <set >
+      <if test="apptype != null" >
+        APPTYPE = #{apptype,jdbcType=CHAR},
+      </if>
+      <if test="comborrflag != null" >
+        COMBORRFLAG = #{comborrflag,jdbcType=CHAR},
+      </if>
+      <if test="sourceschan != null" >
+        SOURCESCHAN = #{sourceschan,jdbcType=CHAR},
+      </if>
+      <if test="sourceschanremark != null" >
+        SOURCESCHANREMARK = #{sourceschanremark,jdbcType=VARCHAR},
+      </if>
+      <if test="salperid != null" >
+        SALPERID = #{salperid,jdbcType=VARCHAR},
+      </if>
+      <if test="salpercode != null" >
+        SALPERCODE = #{salpercode,jdbcType=VARCHAR},
+      </if>
+      <if test="salpertel != null" >
+        SALPERTEL = #{salpertel,jdbcType=VARCHAR},
+      </if>
+      <if test="salperorgid != null" >
+        SALPERORGID = #{salperorgid,jdbcType=VARCHAR},
+      </if>
+      <if test="proid != null" >
+        PROID = #{proid,jdbcType=VARCHAR},
+      </if>
+      <if test="procode != null" >
+        PROCODE = #{procode,jdbcType=VARCHAR},
+      </if>
+      <if test="apporgid != null" >
+        APPORGID = #{apporgid,jdbcType=VARCHAR},
+      </if>
+      <if test="apporgcode != null" >
+        APPORGCODE = #{apporgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="appserperid != null" >
+        APPSERPERID = #{appserperid,jdbcType=VARCHAR},
+      </if>
+      <if test="appserpercode != null" >
+        APPSERPERCODE = #{appserpercode,jdbcType=VARCHAR},
+      </if>
+      <if test="appdate != null" >
+        APPDATE = #{appdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="famknowflag != null" >
+        FAMKNOWFLAG = #{famknowflag,jdbcType=CHAR},
+      </if>
+      <if test="knowername != null" >
+        KNOWERNAME = #{knowername,jdbcType=VARCHAR},
+      </if>
+      <if test="knowerrelation != null" >
+        KNOWERRELATION = #{knowerrelation,jdbcType=CHAR},
+      </if>
+      <if test="borrtype != null" >
+        BORRTYPE = #{borrtype,jdbcType=VARCHAR},
+      </if>
+      <if test="emertype != null" >
+        EMERTYPE = #{emertype,jdbcType=CHAR},
+      </if>
+      <if test="emeramt != null" >
+        EMERAMT = #{emeramt,jdbcType=DECIMAL},
+      </if>
+      <if test="applymainno != null" >
+        APPLYMAINNO = #{applymainno,jdbcType=VARCHAR},
+      </if>
+      <if test="applysubno != null" >
+        APPLYSUBNO = #{applysubno,jdbcType=VARCHAR},
+      </if>
+      <if test="processinstanceid != null" >
+        PROCESSINSTANCEID = #{processinstanceid,jdbcType=BIGINT},
+      </if>
+      <if test="busistate != null" >
+        BUSISTATE = #{busistate,jdbcType=CHAR},
+      </if>
+      <if test="reconsidernum != null" >
+        RECONSIDERNUM = #{reconsidernum,jdbcType=TINYINT},
+      </if>
+      <if test="teamleaderid != null" >
+        TEAMLEADERID = #{teamleaderid,jdbcType=VARCHAR},
+      </if>
+      <if test="teamleadercode != null" >
+        TEAMLEADERCODE = #{teamleadercode,jdbcType=VARCHAR},
+      </if>
+      <if test="teamleadersuborgid != null" >
+        TEAMLEADERSUBORGID = #{teamleadersuborgid,jdbcType=VARCHAR},
+      </if>
+      <if test="teamleaderorgid != null" >
+        TEAMLEADERORGID = #{teamleaderorgid,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        CREATETIME = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="datasource != null" >
+        DATASOURCE = #{datasource,jdbcType=CHAR},
+      </if>
+      <if test="bulltype != null" >
+        BULLTYPE = #{bulltype,jdbcType=CHAR},
+      </if>
+      <if test="applyparentsubno != null" >
+        APPLYPARENTSUBNO = #{applyparentsubno,jdbcType=VARCHAR},
+      </if>
+      <if test="channelbackflag != null" >
+        CHANNELBACKFLAG = #{channelbackflag,jdbcType=CHAR},
+      </if>
+      <if test="signorgcode != null" >
+        SIGNORGCODE = #{signorgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="signorgname != null" >
+        SIGNORGNAME = #{signorgname,jdbcType=VARCHAR},
+      </if>
+      <if test="synstatus != null" >
+        SYNSTATUS = #{synstatus,jdbcType=CHAR},
+      </if>
+      <if test="intrmob != null" >
+        INTRMOB = #{intrmob,jdbcType=VARCHAR},
+      </if>
+      <if test="intrname != null" >
+        INTRNAME = #{intrname,jdbcType=VARCHAR},
+      </if>
+      <if test="productoptional != null" >
+        PRODUCTOPTIONAL = #{productoptional,jdbcType=CHAR},
+      </if>
+      <if test="insuranceplan != null" >
+        INSURANCEPLAN = #{insuranceplan,jdbcType=TINYINT},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.test.mybatis.po.Accepapplyinfo" >
+    update ACCEPAPPLYINFO
+    set APPTYPE = #{apptype,jdbcType=CHAR},
+      COMBORRFLAG = #{comborrflag,jdbcType=CHAR},
+      SOURCESCHAN = #{sourceschan,jdbcType=CHAR},
+      SOURCESCHANREMARK = #{sourceschanremark,jdbcType=VARCHAR},
+      SALPERID = #{salperid,jdbcType=VARCHAR},
+      SALPERCODE = #{salpercode,jdbcType=VARCHAR},
+      SALPERTEL = #{salpertel,jdbcType=VARCHAR},
+      SALPERORGID = #{salperorgid,jdbcType=VARCHAR},
+      PROID = #{proid,jdbcType=VARCHAR},
+      PROCODE = #{procode,jdbcType=VARCHAR},
+      APPORGID = #{apporgid,jdbcType=VARCHAR},
+      APPORGCODE = #{apporgcode,jdbcType=VARCHAR},
+      APPSERPERID = #{appserperid,jdbcType=VARCHAR},
+      APPSERPERCODE = #{appserpercode,jdbcType=VARCHAR},
+      APPDATE = #{appdate,jdbcType=TIMESTAMP},
+      FAMKNOWFLAG = #{famknowflag,jdbcType=CHAR},
+      KNOWERNAME = #{knowername,jdbcType=VARCHAR},
+      KNOWERRELATION = #{knowerrelation,jdbcType=CHAR},
+      BORRTYPE = #{borrtype,jdbcType=VARCHAR},
+      EMERTYPE = #{emertype,jdbcType=CHAR},
+      EMERAMT = #{emeramt,jdbcType=DECIMAL},
+      APPLYMAINNO = #{applymainno,jdbcType=VARCHAR},
+      APPLYSUBNO = #{applysubno,jdbcType=VARCHAR},
+      PROCESSINSTANCEID = #{processinstanceid,jdbcType=BIGINT},
+      BUSISTATE = #{busistate,jdbcType=CHAR},
+      RECONSIDERNUM = #{reconsidernum,jdbcType=TINYINT},
+      TEAMLEADERID = #{teamleaderid,jdbcType=VARCHAR},
+      TEAMLEADERCODE = #{teamleadercode,jdbcType=VARCHAR},
+      TEAMLEADERSUBORGID = #{teamleadersuborgid,jdbcType=VARCHAR},
+      TEAMLEADERORGID = #{teamleaderorgid,jdbcType=VARCHAR},
+      CREATETIME = #{createtime,jdbcType=TIMESTAMP},
+      DATASOURCE = #{datasource,jdbcType=CHAR},
+      BULLTYPE = #{bulltype,jdbcType=CHAR},
+      APPLYPARENTSUBNO = #{applyparentsubno,jdbcType=VARCHAR},
+      CHANNELBACKFLAG = #{channelbackflag,jdbcType=CHAR},
+      SIGNORGCODE = #{signorgcode,jdbcType=VARCHAR},
+      SIGNORGNAME = #{signorgname,jdbcType=VARCHAR},
+      SYNSTATUS = #{synstatus,jdbcType=CHAR},
+      INTRMOB = #{intrmob,jdbcType=VARCHAR},
+      INTRNAME = #{intrname,jdbcType=VARCHAR},
+      PRODUCTOPTIONAL = #{productoptional,jdbcType=CHAR},
+      INSURANCEPLAN = #{insuranceplan,jdbcType=TINYINT}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
